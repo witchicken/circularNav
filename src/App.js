@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import "./App.scss";
 function App() {
+  const [nowView, setNowView] = useState(1);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul class="nav">
+        <li>
+          <span>snow</span>
+        </li>
+        <li>
+          <span>rain</span>
+        </li>
+        <li>
+          <span>sunny</span>
+        </li>
+        <li>
+          <span>night</span>
+        </li>
+        <li>
+          <span>typhoon</span>
+        </li>
+      </ul>
+      <div class="innercircle"></div>
+      <div class="innerView"></div>
     </div>
   );
 }

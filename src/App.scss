@@ -1,0 +1,79 @@
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.App {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  @include center();
+  height: 100vh;
+  background-color: antiquewhite;
+  .nav {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    background-color: aqua;
+    padding: 0;
+    overflow: hidden;
+    transform: rotate(260deg);
+    z-index: 777;
+    li {
+      background-color: cadetblue;
+      list-style: none;
+      position: absolute;
+      overflow: hidden;
+      font-size: 20px;
+      width: 150px;
+      height: 150px;
+      transform-origin: 100% 100%;
+      @include center();
+    }
+    li:nth-child(1) {
+      transform: rotate(0deg);
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+    li:nth-child(2) {
+      transform: rotate(72deg);
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+    li:nth-child(3) {
+      transform: rotate(144deg);
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+    li:nth-child(4) {
+      transform: rotate(216deg);
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+    li:nth-child(5) {
+      transform: rotate(288deg);
+      span {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .innercircle {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: inherit;
+    z-index: 888;
+  }
+  .innerView {
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    background-color: blue;
+  }
+}

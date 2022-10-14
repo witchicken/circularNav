@@ -3,77 +3,124 @@
   align-items: center;
   justify-content: center;
 }
-.App {
+* {
   box-sizing: border-box;
+}
+.App {
   margin: 0;
   padding: 0;
   @include center();
   height: 100vh;
-  background-color: antiquewhite;
+  background-color: #cccccc;
   .nav {
     width: 300px;
     height: 300px;
     border-radius: 50%;
     position: relative;
-    background-color: aqua;
-    padding: 0;
     overflow: hidden;
-    transform: rotate(260deg);
-    z-index: 777;
-    li {
-      background-color: cadetblue;
-      list-style: none;
+    z-index: 998;
+    cursor: pointer;
+    transition: transform 0.4s;
+    transform: rotate(-40deg);
+    .partial {
       position: absolute;
-      overflow: hidden;
-      font-size: 20px;
-      width: 150px;
-      height: 150px;
-      transform-origin: 100% 100%;
-      @include center();
-    }
-    li:nth-child(1) {
-      transform: rotate(0deg);
+      width: 300px;
+      height: 300px;
+      top: 0;
+      left: 0;
+      background-color: coral;
       span {
-        transform: rotate(-45deg);
+        font-size: 25px;
+        position: absolute;
+        color: #3a7575;
+        background: linear-gradient(
+          to right,
+          rgba(255, 0, 0, 1),
+          rgba(255, 0, 180, 1),
+          rgba(0, 100, 200, 1)
+        );
+        background-size: 0 3px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 0.4s;
+        &:hover {
+          background-size: 100% 3px;
+        }
       }
     }
-    li:nth-child(2) {
-      transform: rotate(72deg);
+    .snow {
+      clip-path: polygon(50% 0%, 50% 50%, 100% 38%, 100% 0%);
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: white;
+      }
       span {
-        transform: rotate(-45deg);
+        top: 15%;
+        left: 65%;
+        transform: rotate(40deg);
       }
     }
-    li:nth-child(3) {
-      transform: rotate(144deg);
+    .rain {
+      clip-path: polygon(100% 38%, 50% 50%, 82% 100%, 100% 100%);
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: #c4d3df;
+      }
       span {
-        transform: rotate(-45deg);
+        top: 58%;
+        left: 79%;
+        transform: rotate(113deg);
       }
     }
-    li:nth-child(4) {
-      transform: rotate(216deg);
+    .sunny {
+      clip-path: polygon(82% 100%, 50% 50%, 18% 100%);
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: #fce570;
+      }
       span {
-        transform: rotate(-45deg);
+        top: 83%;
+        left: 39%;
+        transform: rotate(180deg);
       }
     }
-    li:nth-child(5) {
-      transform: rotate(288deg);
+    .night {
+      clip-path: polygon(18% 100%, 50% 50%, 0% 38%, 0% 100%);
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: #041a40;
+      }
       span {
-        transform: rotate(-45deg);
+        top: 58%;
+        left: 5%;
+        transform: rotate(249deg);
+      }
+    }
+    .typhoon {
+      clip-path: polygon(0% 38%, 50% 50%, 50% 0%, 0% 0%);
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: #004f63;
+      }
+      span {
+        top: 16%;
+        left: 11%;
+        transform: rotate(320deg);
       }
     }
   }
-  .innercircle {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: inherit;
-    z-index: 888;
-  }
-  .innerView {
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-    background-color: blue;
+  .nav_active {
+    span {
+      background: linear-gradient(
+        to right,
+        rgba(255, 0, 0, 1),
+        rgba(255, 0, 180, 1),
+        rgba(0, 100, 200, 1)
+      );
+      background-size: 100% 3px !important;
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      transition: background-size 1.5s !important;
+    }
   }
 }

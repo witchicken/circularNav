@@ -10,13 +10,7 @@ import Typhoon from "./components/Typhoon.js";
 function App() {
   const [nowView, setNowView] = useState(0);
   const $nav = document.querySelector(".nav");
-  function activate({ target }) {
-    console.log(target);
-    if (!target.matches(".nav > div")) return;
-    [...$nav.children].forEach(($part) => {
-      $part.classList.toggle("nav_active", $part === target);
-    });
-  }
+
   switch (nowView) {
     case 0:
       break;

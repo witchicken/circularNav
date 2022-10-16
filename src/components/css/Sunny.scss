@@ -2,10 +2,15 @@
   height: 100vh;
   position: absolute;
   width: 100%;
-  background-color: RGB(242, 242, 122);
+  //background-color: RGB(242, 242, 122);
   display: flex;
   justify-content: center;
   align-items: center;
+  animation-name: sunnyBg;
+  animation-timing-function: linear;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
   .innerCircle {
     width: 150px;
     height: 150px;
@@ -18,5 +23,91 @@
     align-items: center;
   }
   .sunnyContainer {
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    .sun {
+      position: absolute;
+      left: 0;
+      bottom: 0px;
+      animation-name: sunMove;
+      animation-timing-function: linear;
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+    }
+    .grassContainer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      display: flex;
+    }
+    .wateringcan {
+      position: absolute;
+      left: 55%;
+      top: 70%;
+      animation-name: wateringRotate;
+      animation-timing-function: linear;
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      animation-play-state: running;
+      transform-origin: 50% 50%;
+    }
+  }
+}
+@keyframes sunMove {
+  0% {
+    top: 100%;
+    left: -200px;
+  }
+  35% {
+    top: 10%;
+  }
+  50% {
+    top: 0%;
+    left: calc(50% - 100px);
+  }
+  65% {
+    top: 10%;
+  }
+  100% {
+    top: 100%;
+    left: 100%;
+  }
+}
+@keyframes wateringRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-45deg);
+  }
+  65% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes sunnyBg {
+  0% {
+    background-color: #000000;
+  }
+  15% {
+    background-color: #7ddffc;
+  }
+  50% {
+    background-color: RGB(242, 242, 122);
+  }
+  85% {
+    background-color: #7ddffc;
+  }
+  100% {
+    background-color: #000000;
   }
 }

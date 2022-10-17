@@ -12,5 +12,8 @@
     border-radius: 50%;
     background-color: inherit;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
